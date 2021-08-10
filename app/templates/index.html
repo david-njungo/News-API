@@ -9,6 +9,14 @@
         {% endif %}
     </head>
     <body>
-
+        <body>
+            <!-- Popular movie section  -->
+            <h3> API News</h3>
+             <ul>
+                {% for business in articles %}
+                    <li>{{ business.title}}</li>
+                {% endfor %}
+            </ul>
+     </body>
     </body>
 </html>
