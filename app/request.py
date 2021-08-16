@@ -46,7 +46,7 @@ def get_article(id):
             url = article_details_response.get('url')
             urlToImage = article_details_response.get('urlToImage')
             description = artcle_details_response.get('description')
-           publisheAt = article_details_response.get('publishedAt')
+           publishedAt = article_details_response.get('publishedAt')
 
             article_object = Article(id,title,url,urlToImage,description,publishedAt)
 
