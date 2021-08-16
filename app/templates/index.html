@@ -1,25 +1,13 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> NEWS API </title>
-        {% endif %}
-    </head>
-    <body>
-        <body>
-            <h1>TOP NEWS</h1>
-            <h1>ABC-NEWS</h1>
-            <ul>
-                {{ macro.displayArticleList(abcnews)}}
-           </ul>
-           <h1>ANSA NEWS</h1>
-           <ul>
-           
-          </ul>
-     </body>
-    </body>
-</html>
+
+<!-- Content block -->
+{%block content%}
+    <h1>TOP NEWS</h1>
+    <h1>ABC-NEWS</h1>
+        {{ macro.displayArticleList(abcnews)}}
+    <h1>ANSA NEWS</h1>
+    <ul>
+
+    </ul>
+{%endblock%}
