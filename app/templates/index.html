@@ -11,12 +11,39 @@
     <body>
         <body>
             <!-- Popular movie section  -->
-            <h3> API News</h3>
+            <h1>TOP NEWS</h1>
+            <!-- <h1>BBC-NEWS</h1>
              <ul>
-                {% for business in articles %}
-                    <li>{{ business.title}}</li>
+                {% for articles in bbcnews %}
+                <li><a href={{articles.url}}></a></li>
+                <br>
+                <li>{{ articles.content}}</li>
+                <hr>
                 {% endfor %}
-            </ul>
+            </ul> -->
+            <h1>ABC-NEWS</h1>
+            <ul>
+               {% for articles in abcnews %}
+               <li><a href="{{articles.url">{{articles.title}}</a></li>
+               <li><img src="{{ articles.urlToImage}}" alt=""></li>
+               <br>
+               <li>{{ articles.description}}</li>
+               <br>
+               <p>Published on:</p>
+               <li>{{ articles.publishedAt}}</li>
+               <hr>
+
+               {% endfor %}
+           </ul>
+           <h1>ANSA NEWS</h1>
+           <ul>
+              {% for articles in ansa %}
+              <li>{{ articles.url}}</li>
+              <br>
+              <li>{{ articles.content}}</li>
+              <hr>
+              {% endfor %}
+          </ul>
      </body>
     </body>
 </html>
