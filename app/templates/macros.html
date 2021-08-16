@@ -1,12 +1,14 @@
-{% macro displayArticleList(article_list) %}
+{% macro displaySourceList(source_list) %}
 
-{% for articles in article_list %}
-<img src="{{ articles.urlToImage}}" alt="{{articles.title}}">
-<br>
-{{ articles.content}}
-<br>
-<p>Published on:{{ articles.publishedAt}}</p>
-<hr>
-{% endfor %}
-
+<div class="container">
+<div class="row">
+    {% for sources in source_list %} 
+    <div class="col-4 sources d-flex">
+        {{ sources.name}}
+        <br>
+    </div>
+       
+    {% endfor %}
+</div>
+</div>
 {% endmacro %}

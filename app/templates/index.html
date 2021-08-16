@@ -3,11 +3,30 @@
 
 <!-- Content block -->
 {%block content%}
-    <h1>TOP NEWS</h1>
-    <h1>ABC-NEWS</h1>
-        {{ macro.displayArticleList(abcnews)}}
-    <h1>ANSA NEWS</h1>
-    <ul>
-
-    </ul>
+<h1 class="text-center fw-bold text-success">TOP NEWS</h1>
+<h2 class="text-center">News sources</h2>
+<div class="container text=primary">
+    <div class="row">
+        <div class="col-2">
+            <h1>General</h1>
+            {{ macro.displaySourceList(general)}}
+        </div>
+        <div class="col-2">
+            <h1>Business </h1>
+            {{ macro.displaySourceList(business)}}
+        </div>
+        <div class="col-2">
+            <h1>Entertainment </h1>
+            {{ macro.displaySourceList(entertainment)}}
+        </div>
+        <div class="col-2">
+            <h1>Sports</h1>
+            {{ macro.displaySourceList(sports)}}
+        </div>
+        <div class="col-2">
+            <h1>Health</h1>
+            {{ macro.displaySourceList(health)}}
+        </div>
+    </div>
+</div>
 {%endblock%}
