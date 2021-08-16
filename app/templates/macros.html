@@ -1,0 +1,14 @@
+{% macro displayArticleList(article_list) %}
+
+    {% for articles in article_list %}
+    
+    <img src="{{ articles.urlToImage}}" alt="">
+    <br>
+    {{ articles.content}}
+    <br>
+    <p>Published on:</p>
+    {{ articles.publishedAt}}
+    <hr>
+    {% endfor %}
+
+{% endmacro %}
