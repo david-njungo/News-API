@@ -8,4 +8,4 @@ class Source:
         self.name = name
         self.description = description
         self.url = url
-       
+        self.category = category
