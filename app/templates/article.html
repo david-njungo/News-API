@@ -2,16 +2,15 @@
 
 {% block content %}
 <div class="container">
-
-    <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 posterPath" style="background: url({{urlToImage}}) no-repeat center center">
-        </div>
-
-        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 article-details">
-            <h3>{{ article.title }}</h3>
-            <p > {{ article.description}}</p>
-            <p >  {{ article.publishedAt }} </p>
+    {% for article in  %} 
+    <div class="card" style="width: 18rem;">
+        <img src="{{urlToImage}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ article.title }}</h5>
+          <p class="card-text">{{ article.description}}</p>
+          <a href="#" class="btn btn-primary">{{ article.publishedAt }}</a>
         </div>
     </div>
+    {% endfor %}
 </div>
 {% endblock %}

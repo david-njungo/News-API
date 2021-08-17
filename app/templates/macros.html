@@ -2,12 +2,9 @@
 
 <div class="container">
 <div class="row">
-    {% for sources in source_list %} 
-    <div class="col-4 sources d-flex">
-        {{ sources.name}}
-        <br>
-    </div>
-       
+    {% for sources in source_list %}    
+       <a href="https://newsapi.org/v2/top-headlines?sources={{sources.id}}&apiKey=19c17f3cfb5147fa83278f289e8d50dc">{{ sources.name}}</a> 
+        <br>  
     {% endfor %}
 </div>
 </div>
