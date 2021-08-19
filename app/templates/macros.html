@@ -3,7 +3,7 @@
 <div class="container">
 <div class="row">
     {% for sources in source_list %}    
-       <a href="./article.html/{{sources.id}}">{{ sources.name}}</a> 
+       <a href="{{ url_for('main.article') }}">{{ sources.name}}</a> 
         <br>  
     {% endfor %}
 </div>

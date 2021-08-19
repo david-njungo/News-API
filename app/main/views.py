@@ -17,14 +17,13 @@ def index():
     health = get_sources('health')
    
     return render_template('index.html',title = title,general = general, business = business,entertainment = entertainment,sports = sports,health = health)
+@main.route('/article')
+def article():
+    # '''
+    # View article page function that returns the article details page and its data
+    # '''
+    articles = get_articles('bbc-news')
+   
+    title = 'NEWS ARTICLES'
 
-@main.route('/article/id')
-def article(id):
-
-    '''
-    View article page function that returns the movie details page and its data
-    '''
-    article = get_articles('id')
-    title = f'{article.title}'
-
-    return render_template('article.html',title = title,article = article)
+    return render_template('article.html',title = title,articles = articles)

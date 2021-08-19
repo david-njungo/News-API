@@ -6,10 +6,10 @@ from .models import Source
 api_key = None
 # Getting the movie base url
 base_url = None
-article_url = None
+
 
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url,article_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
     article_url = app.config["ARTICLE_URL"]
@@ -32,20 +32,21 @@ def get_sources(category):
 
 
     return news_sources
-def get_articles(id):   
+def get_articles(id): 
     get_article_details_url = article_url.format(id,api_key)
     url = get_article_details_url .replace(" ","")
 
     with urllib.request.urlopen(url) as url:
         article_details_data = url.read()
-        article_details_response = json.loads(article_details_data)
+        get_articles_response = json.loads(article_details_data)
         
         news_articles  = None
 
-        if get_sources_response['sources']:
-            news_articles_list = article_details_response ['articles']
+        if get_articles_response['articles']:
+            news_articles_list = get_articles_response ['articles']
             news_articles = process_articles(news_articles_list)
     return news_articles
+    print(news_articles)
 def process_sources(source_list):
     '''
     Function  that processes the news result and transform them to a list of Objects
@@ -72,15 +73,14 @@ def process_sources(source_list):
 def process_articles(article_list):
     news_articles = []
     for article_item in article_list:
-        id = article_details_response.get('id')
-        title = article_details_response.get('title')
-        url = article_details_response.get('url')
-        urlToImage = article_details_response.get('urlToImage')
-        description = article_details_response.get('description')
-        publishedAt = article_details_response.get('publishedAt')
+        id = article_item.get('id')
+        url = article_item.get('url')
+        urlToImage = article_item.get('urlToImage')
+        description = article_item.get('description')
+        publishedAt = article_item.get('publishedAt')
 
         if id:
-            article_object = Article(id,title,url,urlToImage,description,publishedAt)
+            article_object = Article(id,url,urlToImage,description,publishedAt)
             news_articles.append(article_object)
 
     return news_articles

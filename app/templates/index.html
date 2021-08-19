@@ -3,34 +3,26 @@
 
 <!-- Content block -->
 {%block content%}
-<!-- Styles block -->
 
-{% block styles%}
-{{ super() }}
-<link rel="stylesheet" href="{{url_for('static',filename='/index.css')}}">
-{% endblock %}
+
 <h1 class="text-center fw-bold text-primary">TOP NEWS</h1>
 <h2 class="text-center text-primary">News sources</h2>
-<div class="row sources display-4">
-    <div class="col me-1">
+<div class="row sources">
+    <div class="col-3 ">
         <h1>General</h1>
         {{ macro.displaySourceList(general)}}
     </div>
-    <div class="col">
+    <div class="col-3">
         <h1>Business </h1>
         {{ macro.displaySourceList(business)}}
     </div>
-    <div class="col">
+    <div class="col-3">
         <h1>Entertainment </h1>
         {{ macro.displaySourceList(entertainment)}}
     </div>
-    <div class="col">
+    <div class="col-3">
         <h1>Sports</h1>
         {{ macro.displaySourceList(sports)}}
-    </div>
-    <div class="col">
-        <h1>Health</h1>
-        {{ macro.displaySourceList(health)}}
     </div>
 </div>
 {%endblock%}
