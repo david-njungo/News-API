@@ -3,26 +3,24 @@
 
 <!-- Content block -->
 {%block content%}
-
-
-<h1 class="text-center fw-bold text-primary">TOP NEWS</h1>
-<h2 class="text-center text-primary">News sources</h2>
-<div class="row sources">
-    <div class="col-3 ">
-        <h1>General</h1>
-        {{ macro.displaySourceList(general)}}
+    <h1 class="text-center fw-bold text-danger"><u>TOP NEWS</u></h1>
+    <h2 class="text-center text-primary"><u>News sources</u></h2>
+    <div class="row sources">
+        <div class="col-3 fw-3">
+            <h1 class="text-center">General</h1>
+            {{ macro.displaySourceList(general)}}
+        </div>
+        <div class="col-3">
+            <h1 class="text-center">Business </h1>
+            {{ macro.displaySourceList(business)}}
+        </div>
+        <div class="col-3">
+            <h1 class="text-center">Entertainment </h1>
+            {{ macro.displaySourceList(entertainment)}}
+        </div>
+        <div class="col-3">
+            <h1 class="text-center">Sports</h1>
+            {{ macro.displaySourceList(sports)}}
+        </div>
     </div>
-    <div class="col-3">
-        <h1>Business </h1>
-        {{ macro.displaySourceList(business)}}
-    </div>
-    <div class="col-3">
-        <h1>Entertainment </h1>
-        {{ macro.displaySourceList(entertainment)}}
-    </div>
-    <div class="col-3">
-        <h1>Sports</h1>
-        {{ macro.displaySourceList(sports)}}
-    </div>
-</div>
 {%endblock%}

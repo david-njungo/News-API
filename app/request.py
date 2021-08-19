@@ -6,7 +6,7 @@ from .models import Source
 api_key = None
 # Getting the movie base url
 base_url = None
-
+article_url = None
 
 def configure_request(app):
     global api_key,base_url,article_url
@@ -29,7 +29,7 @@ def get_sources(category):
         if get_sources_response['sources']:
             news_sources_list = get_sources_response['sources']
             news_sources = process_sources(news_sources_list)
-
+    
 
     return news_sources
 def get_articles(id): 
@@ -40,13 +40,13 @@ def get_articles(id):
         article_details_data = url.read()
         get_articles_response = json.loads(article_details_data)
         
-        news_articles  = None
+        news_articles  = []
 
         if get_articles_response['articles']:
             news_articles_list = get_articles_response ['articles']
             news_articles = process_articles(news_articles_list)
     return news_articles
-    print(news_articles)
+
 def process_sources(source_list):
     '''
     Function  that processes the news result and transform them to a list of Objects
@@ -79,9 +79,9 @@ def process_articles(article_list):
         description = article_item.get('description')
         publishedAt = article_item.get('publishedAt')
 
-        if id:
+        if url:
             article_object = Article(id,url,urlToImage,description,publishedAt)
             news_articles.append(article_object)
-
+    
     return news_articles
     

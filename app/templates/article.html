@@ -1,11 +1,23 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<div class="container">
-  <p>
+<div class="container-fluid">
+  <h1 class="text-primary pt-3 text-center"><u>TOP ARTICLES OF ALL TIMES</u></h1>
+  <div class="row">
     {% for article in articles %} 
-      <p>{{article.author}}</p>
+    <div class="col-3 ps-0">      
+      <div class="card" style="width: 18rem;">
+        <img src="{{article.url}}" class="card-img-top" alt="...">
+        <div class="card-body bg-">
+          <p class="card-text text-dark">{{article.urlToImage}}</p>
+          <h5 class="card-title text-primary">Published on: {{article.publishedAt}}</h5>
+          <a href="{{article.description}}" class="btn btn-primary">See More</a>
+        </div>
+      </div>
+    </div>  
+    <br>
     {% endfor %} 
-  </p>
+  </div>
+  <hr>  
 </div>
 {% endblock %}

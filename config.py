@@ -8,7 +8,7 @@ class Config:
     ARTICLE_URL = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'
     NEWS_API_KEY = os.environ.get('NEWS_API_KEY')
     SECRET_KEY = os.environ.get('SECRET_KEY')
-
+    ERROR_404_HELP = False
 class ProdConfig(Config):
     '''
     Production  configuration child class

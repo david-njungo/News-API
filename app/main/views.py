@@ -15,15 +15,16 @@ def index():
     entertainment = get_sources('entertainment')
     sports = get_sources('sports')
     health = get_sources('health')
-   
+    
     return render_template('index.html',title = title,general = general, business = business,entertainment = entertainment,sports = sports,health = health)
+
 @main.route('/article')
 def article():
     # '''
     # View article page function that returns the article details page and its data
     # '''
     articles = get_articles('bbc-news')
-   
+    # print(article.id)
     title = 'NEWS ARTICLES'
 
     return render_template('article.html',title = title,articles = articles)
