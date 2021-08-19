@@ -24,7 +24,7 @@ def article():
     # View article page function that returns the article details page and its data
     # '''
     articles = get_articles('bbc-news')
-    # print(article.id)
+    
     title = 'NEWS ARTICLES'
 
     return render_template('article.html',title = title,articles = articles)
