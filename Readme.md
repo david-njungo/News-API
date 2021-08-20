@@ -17,7 +17,7 @@ $ git clone https://github.com/david-njungo/News-API.git
 ```
 * Open  the project on VS Code/ your editor of choice
 ## Live Demo
-open the project at 
+open the project at https://newsapi-app.herokuapp.com/
 ## Known Bugs
 No known bugs yet.
 ## Technologies Used
