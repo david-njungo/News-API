@@ -10,3 +10,4 @@ python3 manage.py server
 # python3.9 manage.py db stamp head
 # python3.9 manage.py db migrate
 # python3.9 manage.py db upgrade
+# web: gunicorn manage:app
